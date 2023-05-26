@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tripmaster.tourguide.PerformanceTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-26T14:33:59" hostname="Mac-mini-de-Sabrina.local" time="30.683">
+  <properties/>
+  <testcase name="highVolumeTrackLocation" classname="com.tripmaster.tourguide.PerformanceTests" time="19.814"/>
+  <testcase name="highVolumeGetRewards" classname="com.tripmaster.tourguide.PerformanceTests" time="10.869"/>
+  <system-out><![CDATA[16:33:59.137 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+16:33:59.137 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+16:33:59.478 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 10000 internal test users.
+16:33:59.480 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+16:33:59.482 [pool-7-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 10000 users.
+highVolumeTrackLocation: Time Elapsed: 19 seconds.
+16:34:18.950 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+16:34:18.951 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+16:34:18.961 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 1000 internal test users.
+16:34:18.962 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+16:34:18.966 [pool-9-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 1000 users.
+highVolumeGetRewards: Time Elapsed: 10 seconds.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

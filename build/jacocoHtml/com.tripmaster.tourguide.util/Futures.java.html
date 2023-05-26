@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Futures.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">com.tripmaster.tourguide.util</a> &gt; <span class="el_source">Futures.java</span></div><h1>Futures.java</h1><pre class="source lang-java linenums">package com.tripmaster.tourguide.util;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
+
+public final class Futures {
+
+<span class="nc" id="L11">    private Futures() throws IllegalAccessException {</span>
+<span class="nc" id="L12">        throw new IllegalAccessException();</span>
+    }
+
+    /**
+     * Lists the results of completable futures after waiting for their completion
+     * @param futureList the list of completable futures to pass using supplyAsync()
+     * @return a list of the result of completed calculations
+     * @param &lt;T&gt; the type of return of the individual completable futures result
+     * @throws ExecutionException the exception thrown if an error happens during a thread execution
+     * @throws InterruptedException the exception thrown if an error happens if a thread is interrupted
+     */
+    public static &lt;T&gt; List&lt;T&gt; listCompleted(List&lt;CompletableFuture&lt;T&gt;&gt; futureList) throws ExecutionException, InterruptedException {
+
+<span class="fc" id="L25">        CompletableFuture&lt;Void&gt; allFutures = CompletableFuture</span>
+<span class="fc" id="L26">                .allOf(futureList.toArray(new CompletableFuture[futureList.size()]));</span>
+
+<span class="fc" id="L28">        CompletableFuture&lt;List&lt;T&gt;&gt; futureComputedList = allFutures.thenApply(pattern -&gt;</span>
+<span class="fc" id="L29">                futureList.stream()</span>
+<span class="fc" id="L30">                        .map(CompletableFuture::join)</span>
+<span class="fc" id="L31">                        .collect(Collectors.toList()));</span>
+
+<span class="fc" id="L33">        return new ArrayList&lt;&gt;(futureComputedList.get());</span>
+    }
+
+    /**
+     * Waits for a list of completable futures to complete
+     * @param futureList the list of completable futures to pass using runAsync()
+     * @throws ExecutionException the exception thrown if an error happens during a thread execution
+     * @throws InterruptedException the exception thrown if an error happens if a thread is interrupted
+     */
+    public static void waitCompleted(List&lt;CompletableFuture&lt;Void&gt;&gt; futureList) throws ExecutionException, InterruptedException {
+
+<span class="fc" id="L44">        CompletableFuture&lt;Void&gt; allFutures = CompletableFuture</span>
+<span class="fc" id="L45">                .allOf(futureList.toArray(new CompletableFuture[futureList.size()]));</span>
+<span class="fc" id="L46">        allFutures.get();</span>
+<span class="fc" id="L47">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
