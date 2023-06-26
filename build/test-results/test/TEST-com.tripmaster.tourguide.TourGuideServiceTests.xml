@@ -1,112 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tripmaster.tourguide.TourGuideServiceTests" tests="6" skipped="0" failures="1" errors="0" timestamp="2023-05-26T14:33:58" hostname="Mac-mini-de-Sabrina.local" time="0.667">
+<testsuite name="com.tripmaster.tourguide.TourGuideServiceTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-06-16T08:45:53" hostname="Mac-mini-de-Sabrina.local" time="3.515">
   <properties/>
-  <testcase name="getUserLocation" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.37"/>
-  <testcase name="addUser" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.002"/>
-  <testcase name="getTripDeals" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.088">
-    <failure message="java.lang.AssertionError: expected:&lt;10&gt; but was:&lt;5&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;10&gt; but was:&lt;5&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at com.tripmaster.tourguide.TourGuideServiceTests.getTripDeals(TourGuideServiceTests.java:134)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.lang.Thread.run(Thread.java:750)
-</failure>
-  </testcase>
-  <testcase name="getAllUsers" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.002"/>
-  <testcase name="trackUser" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.107"/>
-  <testcase name="getNearbyAttractions" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.094"/>
-  <system-out><![CDATA[16:33:58.560 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:58.569 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:58.597 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:58.602 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:58.615 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:58.617 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:58.617 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:33:58.839 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:58.839 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:58.840 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:58.840 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:58.840 [pool-2-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:58.841 [pool-2-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:58.841 [pool-2-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:33:58.841 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:58.842 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:58.842 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:58.843 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:58.856 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:58.857 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:58.857 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:33:58.929 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:58.931 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:58.931 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:58.931 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:58.931 [pool-4-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:58.931 [pool-4-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:58.931 [pool-4-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:33:58.933 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:58.934 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:58.934 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:58.934 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:58.934 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:58.934 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:58.934 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:33:59.041 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:33:59.041 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:33:59.041 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:33:59.041 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:33:59.042 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:33:59.042 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:33:59.042 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+  <testcase name="getUserLocation" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.349"/>
+  <testcase name="addUser" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.001"/>
+  <testcase name="getTripDeals" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.045"/>
+  <testcase name="getAllUsers" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.003"/>
+  <testcase name="trackUser" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="0.093"/>
+  <testcase name="getNearbyAttractions" classname="com.tripmaster.tourguide.TourGuideServiceTests" time="3.024"/>
+  <system-out><![CDATA[10:45:53.501 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.509 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.515 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.517 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.551 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
+10:45:53.553 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+10:45:53.553 [pool-1-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+10:45:53.716 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.716 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.716 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.716 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.717 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.717 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.717 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.717 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.717 [pool-2-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker stopping
+10:45:53.726 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
+10:45:53.726 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+10:45:53.726 [pool-3-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+10:45:53.762 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.762 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.762 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.762 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.765 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.765 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.765 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.765 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.765 [pool-4-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker stopping
+10:45:53.772 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
+10:45:53.772 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+10:45:53.772 [pool-5-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+10:45:53.858 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:45:53.858 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:45:53.859 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:45:53.859 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:45:53.860 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
+10:45:53.860 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+10:45:53.860 [pool-6-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
 ]]></system-out>
-  <system-err><![CDATA[May 26, 2023 4:33:58 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+  <system-err><![CDATA[Jun 16, 2023 10:45:53 AM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
 INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 ]]></system-err>
 </testsuite>

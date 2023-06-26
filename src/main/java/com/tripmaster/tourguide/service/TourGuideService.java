@@ -1,7 +1,10 @@
 package com.tripmaster.tourguide.service;
 
+import com.tripmaster.tourguide.dto.UserPreferencesDTO;
 import com.tripmaster.tourguide.helper.InternalTestHelper;
+import com.tripmaster.tourguide.dto.DistancedAttraction;
 import com.tripmaster.tourguide.model.tracker.Tracker;
+import com.tripmaster.tourguide.dto.TouristAttractionDTO;
 import com.tripmaster.tourguide.model.user.User;
 import com.tripmaster.tourguide.model.user.UserReward;
 import com.tripmaster.tourguide.util.Futures;
@@ -21,6 +24,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static java.lang.Math.min;
 
 @Service
 public class TourGuideService {
@@ -86,7 +91,7 @@ public class TourGuideService {
         return visitedLocation;
     }
 
-    public List<VisitedLocation> trackUsersLocations(List<User> users)  {
+    public List<VisitedLocation> trackUsersLocations(List<User> users) {
 
         ExecutorService service = Executors.newFixedThreadPool(50);
 
@@ -96,7 +101,7 @@ public class TourGuideService {
                                     () -> trackUserLocation(user), service
                             ))
                             .collect(Collectors.toList()
-            ));
+                            ));
 
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -107,25 +112,76 @@ public class TourGuideService {
         }
     }
 
-    public List<Attraction> getNearbyAttractions(VisitedLocation visitedLocation) {
-        List<Attraction> nearbyAttractions = new CopyOnWriteArrayList<>();
+    /**
+     * Changed this method
+     *
+     * @param user
+     * @return
+     */
+    public List<TouristAttractionDTO> getNearbyAttractions(User user) {
 
-        for (Attraction attraction : gpsUtil.getAttractions()) {
+        VisitedLocation visitedLocation = getUserLocation(user);
 
-            if (nearbyAttractions.size() < 5)   {
-                nearbyAttractions.add(attraction);
-            } else {
-                for (Attraction nearbyAttraction : nearbyAttractions)   {
-                    if (rewardsService.getDistance(attraction, visitedLocation.location)
-                    < rewardsService.getDistance(nearbyAttraction, visitedLocation.location))   {
-                        nearbyAttractions.remove(nearbyAttraction);
-                        nearbyAttractions.add(attraction);
-                    }
-                }
-            }
-        }
+        List<Attraction> attractions = getFiveClosestAttractions(visitedLocation);
 
-        return nearbyAttractions;
+        List<TouristAttractionDTO> touristAttractionDTOs = new ArrayList<>();
+
+        attractions.forEach(attraction -> touristAttractionDTOs.add(
+                new TouristAttractionDTO(
+                        attraction.attractionName,
+                        attraction.longitude,
+                        attraction.latitude,
+                        visitedLocation.location.longitude,
+                        visitedLocation.location.latitude,
+                        rewardsService.getDistance(attraction, visitedLocation.location),
+                        rewardsService.getRewardPoints(attraction, user)
+                )
+        ));
+        return touristAttractionDTOs;
+    }
+
+    public Map<UUID, Location> getAllCurrentLocations() {
+
+        Map<UUID, Location> result = new HashMap<>();
+        List<User> users = getAllUsers();
+
+        users.forEach(user -> result.put(user.getUserId(), user.getLastVisitedLocation().location));
+
+        return result;
+    }
+
+    /**
+     * Changed this method
+     *
+     * @param visitedLocation
+     * @return
+     */
+    private List<Attraction> getFiveClosestAttractions(VisitedLocation visitedLocation) {
+
+        List<DistancedAttraction> fiveClosestAttractions = gpsUtil.getAttractions()
+                .stream()
+                .map(
+                attraction -> new DistancedAttraction(attraction, rewardsService.getDistance(attraction, visitedLocation.location)))
+                .collect(Collectors.toList());
+
+        fiveClosestAttractions.sort(Comparator.comparing(DistancedAttraction::getDistance));
+
+        return fiveClosestAttractions.subList(0, min(5, fiveClosestAttractions.size()))
+                .stream()
+                .map(DistancedAttraction::getAttraction)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * New method
+     *
+     * @param user
+     * @param userPreferencesDTO
+     */
+    public void updatePreferences(User user, UserPreferencesDTO userPreferencesDTO) {
+        user.getUserPreferences().setNumberOfAdults(userPreferencesDTO.getNumberOfAdults());
+        user.getUserPreferences().setNumberOfChildren(userPreferencesDTO.getNumberOfChildren());
+        user.getUserPreferences().setTripDuration(userPreferencesDTO.getTripDuration());
     }
 
     private void addShutDownHook() {

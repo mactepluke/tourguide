@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tripmaster.tourguide.RewardsServiceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-26T14:34:29" hostname="Mac-mini-de-Sabrina.local" time="18.573">
+<testsuite name="com.tripmaster.tourguide.RewardsServiceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-06-16T08:46:04" hostname="Mac-mini-de-Sabrina.local" time="15.386">
   <properties/>
-  <testcase name="nearAllAttractions" classname="com.tripmaster.tourguide.RewardsServiceTests" time="17.523"/>
-  <testcase name="userGetRewards" classname="com.tripmaster.tourguide.RewardsServiceTests" time="1.037"/>
-  <testcase name="isWithinAttractionProximity" classname="com.tripmaster.tourguide.RewardsServiceTests" time="0.012"/>
-  <system-out><![CDATA[16:34:29.825 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:34:29.825 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:34:29.825 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 1 internal test users.
-16:34:29.825 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:34:29.826 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 1 users.
-16:34:44.001 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 14 seconds.
-16:34:44.001 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
-16:34:47.348 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
-16:34:47.348 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
-16:34:47.348 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
-16:34:47.348 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
-16:34:47.349 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
-16:34:47.349 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-16:34:47.349 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+  <testcase name="nearAllAttractions" classname="com.tripmaster.tourguide.RewardsServiceTests" time="14.739"/>
+  <testcase name="userGetRewards" classname="com.tripmaster.tourguide.RewardsServiceTests" time="0.636"/>
+  <testcase name="isWithinAttractionProximity" classname="com.tripmaster.tourguide.RewardsServiceTests" time="0.011"/>
+  <system-out><![CDATA[10:46:04.251 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:46:04.251 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:46:04.251 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 1 internal test users.
+10:46:04.251 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:46:04.252 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 1 users.
+10:46:18.979 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 14 seconds.
+10:46:18.979 [pool-11-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
+10:46:18.990 [Test worker] INFO com.tripmaster.tourguide.service.TourGuideService - TestMode enabled
+10:46:18.990 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Initializing users
+10:46:18.990 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Created 0 internal test users.
+10:46:18.990 [Test worker] DEBUG com.tripmaster.tourguide.service.TourGuideService - Finished initializing users
+10:46:18.995 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Begin Tracker. Tracking 0 users.
+10:46:18.995 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+10:46:18.995 [pool-12-thread-1] DEBUG com.tripmaster.tourguide.model.tracker.Tracker - Tracker sleeping
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

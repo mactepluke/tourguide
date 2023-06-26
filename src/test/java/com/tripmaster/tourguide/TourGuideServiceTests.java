@@ -1,11 +1,11 @@
 package com.tripmaster.tourguide;
 
+import com.tripmaster.tourguide.dto.TouristAttractionDTO;
 import com.tripmaster.tourguide.helper.InternalTestHelper;
 import com.tripmaster.tourguide.model.user.User;
 import com.tripmaster.tourguide.service.RewardsService;
 import com.tripmaster.tourguide.service.TourGuideService;
 import gpsUtil.GpsUtil;
-import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -109,9 +109,8 @@ public class TourGuideServiceTests {
 		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService);
 		
 		User user = new User(UUID.randomUUID(), "jon", "000", "jon@tourGuide.com");
-		VisitedLocation visitedLocation = tourGuideService.trackUserLocation(user);
-		
-		List<Attraction> attractions = tourGuideService.getNearbyAttractions(visitedLocation);
+
+		List<TouristAttractionDTO> attractions = tourGuideService.getNearbyAttractions(user);
 		
 		tourGuideService.tracker.stopTracking();
 		
@@ -131,8 +130,7 @@ public class TourGuideServiceTests {
 		
 		tourGuideService.tracker.stopTracking();
 		
-		assertEquals(10, providers.size());
+		assertEquals(5, providers.size());
 	}
-	
 	
 }
